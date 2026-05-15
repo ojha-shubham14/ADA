@@ -59,10 +59,6 @@ void mergesort(int a[], int low, int high)
         mergesort(a, mid + 1, high);
         merge(a, low, mid, high);
     }
-}
-
-void display(int a[], int low, int high)
-{
     int i;
     printf("\nElements after sorting are:\n");
     for (i = 0; i <= high; i++)
@@ -87,7 +83,6 @@ int main()
 
     clock_t start = clock();
     mergesort(a, 0, n - 1);
-    display(a, 0, n - 1);
     clock_t end = clock();
 
     double time_taken = ((double)(end - start)) / CLOCKS_PER_SEC * 1000;
