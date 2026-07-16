@@ -4,8 +4,7 @@
 int count = 0, x[20];
 
 int place(int k, int i) {
-    int j;
-    for (j = 1; j < k; j++)
+    for ( int j = 0; j < k; j++)
         if ((x[j] == i) || (abs(x[j] - i) == abs(j - k)))
             return 0;
     return 1;
