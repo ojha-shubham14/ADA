@@ -38,9 +38,6 @@ int main(){
     for(int i =1;i<=n;i++){
         for(int j=1;j<=n;j++){
             scanf("%d",&cost[i][j]);
-            if(cost[i][j]==0){
-                cost[i][j]=999;
-            }
         }
     }
     printf("\n");
