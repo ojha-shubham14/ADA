@@ -8,7 +8,7 @@ void subset(int cs,int k,int r, int x[],int w[],int d, int n){
         printf("the solution %d is {",count);
         for(int i =1;i<=k;i++){
             if(x[i]==1){
-                printf("%d",w[i]);
+                printf("%d,",w[i]);
             }
         }
         printf("}\n");
@@ -16,7 +16,7 @@ void subset(int cs,int k,int r, int x[],int w[],int d, int n){
     else if((k<n)&&((cs+w[k]+w[k+1])<=d)){
         subset(cs+w[k],k+1,r-w[k],x,w,d,n);
     }
-    if((k<=n)&&((cs+r-w[k])>=d)&&((cs+w[k])<=d)){
+    if((k<n)&&((cs+r-w[k])>=d)&&((cs+w[k+1])<=d)){
             x[k]=0;
             subset(cs,k+1,r-w[k],x,w,d,n);
     }
@@ -34,14 +34,14 @@ int main(){
     scanf("%d",&d);
     printf("\nEnter the weights in increasing order\n");
     for(int i=1;i<=n;i++){
-        printf("item %d ",i);
+        printf("item%d: ",i);
         scanf("%d",&w[i]);
         x[i]=0;
     }
     for(int i =1;i<=n;i++){
         sum+=w[i];
     }
-     if(d<w[1] || sum<d){
+    if(d<w[1] || sum<d){
         printf("\nthe solution is not possible as its not making up to the find sum\n");
         return 0;
     }
