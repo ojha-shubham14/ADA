@@ -52,12 +52,19 @@ int main()
         for(j = 1; j <= n; j++)
         {
             scanf("%d", &cost[i][j]);
-
-            // 0 means no edge, replace with 999 (infinity)
-            if(cost[i][j] == 0)
-                cost[i][j] = 999;
         }
     }
+    printf("\n your enetrd adjacancy matrix is :\n");
+   for(int p = 1; p <= n; p++)
+    {
+        for(int q = 1; q <= n; q++)
+        {
+            printf("%d\t",cost[p][q]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+ 
 
     prims(cost, n);
     return 0;
